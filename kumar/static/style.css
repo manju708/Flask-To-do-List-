@@ -1,0 +1,144 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input[type="text"], textarea {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+button {
+    padding: 10px 15px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #45a049;
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filters a {
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.filters a.active {
+    background: #4CAF50;
+    color: white;
+}
+
+.todo-list {
+    list-style: none;
+    padding: 0;
+}
+
+.todo-list li {
+    padding: 15px;
+    margin-bottom: 10px;
+    background: #f9f9f9;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.todo-list li.completed {
+    opacity: 0.7;
+}
+
+.todo-list li.completed h3 {
+    text-decoration: line-through;
+}
+
+.todo-content h3 {
+    margin: 0 0 5px 0;
+}
+
+.todo-content p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.todo-content small {
+    color: #999;
+}
+
+.todo-actions {
+    display: flex;
+    gap: 5px;
+}
+
+.btn {
+    padding: 5px 10px;
+    text-decoration: none;
+    color: white;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.btn.delete {
+    background: #f44336;
+}
+
+.btn.delete:hover {
+    background: #d32f2f;
+}
+
+.btn:nth-child(1) {
+    background: #2196F3;
+}
+
+.btn:nth-child(1):hover {
+    background: #0b7dda;
+}
+
+.btn:nth-child(2) {
+    background: #ff9800;
+}
+
+.btn:nth-child(2):hover {
+    background: #e68a00;
+}

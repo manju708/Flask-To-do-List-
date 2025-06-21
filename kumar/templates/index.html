@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form action="{{ url_for('add') }}" method="post">
+        <input type="text" name="task" placeholder="New task" required>
+        <input type="text" name="description" placeholder="Description (optional)">
+        <button type="submit">Add Task</button>
+    </form>
+
+    <div class="filters">
+        <a href="{{ url_for('index', filter='all') }}" class="{{ 'active' if filter_type == 'all' }}">All</a>
+        <a href="{{ url_for('index', filter='incomplete') }}" class="{{ 'active' if filter_type == 'incomplete' }}">Incomplete</a>
+        <a href="{{ url_for('index', filter='completed') }}" class="{{ 'active' if filter_type == 'completed' }}">Completed</a>
+    </div>
+
+    <ul class="todo-list">
+        {% for todo in todos %}
+            <li class="{{ 'completed' if todo[4] else '' }}">
+                <div class="todo-content">
+                    <h3>{{ todo[1] }}</h3>
+                    {% if todo[2] %}
+                        <p>{{ todo[2] }}</p>
+                    {% endif %}
+                    <small>Created: {{ todo[3] }}</small>
+                </div>
+                <div class="todo-actions">
+                    {% if todo[4] %}
+                        <a href="{{ url_for('uncomplete', todo_id=todo[0]) }}" class="btn">Mark Incomplete</a>
+                    {% else %}
+                        <a href="{{ url_for('complete', todo_id=todo[0]) }}" class="btn">Mark Complete</a>
+                    {% endif %}
+                    <a href="{{ url_for('edit', todo_id=todo[0]) }}" class="btn">Edit</a>
+                    <a href="{{ url_for('delete', todo_id=todo[0]) }}" class="btn delete">Delete</a>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
